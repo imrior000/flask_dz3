@@ -1,0 +1,22 @@
+{% extends 'base1.html' %}
+
+{% block title %}
+    Главная страница
+{% endblock %}
+
+{% block content %}
+<form action="/" method="POST">
+    {{ form.csrf_token }}
+    Ваше имя  : {{ form.name(size=32) }}
+    <br>
+    Ваша фамилия : {{ form.last_name(size=32) }}
+    <br>
+    Ваш e-mail: {{ form.email(size=32) }}
+    <br>
+    Пароль  : {{ form.passwd(size=32) }}
+    <br>
+    Пароль еще раз  : {{ form.passwd2 }}
+    <br>
+    <input type="submit" value="Зарегистрироваться">
+</form>
+{% endblock %}
